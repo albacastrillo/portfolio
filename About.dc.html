@@ -1,13 +1,217 @@
-Put your image files in this folder using these exact names:
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body { background: #FAF7F1; }
+    ::selection { background: #BE3A4F; color: #fff; }
+    @media (max-width: 768px) {
+      [style*="max-width: 1080px"] { padding-left: 20px !important; padding-right: 20px !important; }
+      [style*="grid-template-columns"] { grid-template-columns: 1fr !important; gap: 20px !important; }
+      h1[style*="font-size: 72px"] { font-size: 38px !important; line-height: 1.12 !important; }
+      h1[style*="font-size: 64px"] { font-size: 36px !important; }
+      h1[style*="font-size: 56px"] { font-size: 32px !important; }
+      h1[style*="font-size: 54px"] { font-size: 30px !important; }
+      h2[style*="font-size: 44px"] { font-size: 28px !important; }
+      h2[style*="font-size: 36px"] { font-size: 26px !important; }
+      h3[style*="font-size: 30px"], h3[style*="font-size: 28px"] { font-size: 23px !important; }
+      a[style*="font-size: 40px"] { font-size: 24px !important; flex-wrap: wrap; word-break: break-word; }
+      [style*="padding: 46px 44px"], [style*="padding: 48px 44px"] { padding: 30px 24px !important; }
+      [style*="padding: 34px 36px"] { padding: 26px 24px !important; }
+      [style*="padding: 30px 26px 30px 30px"] { padding: 26px 22px !important; }
+      [style*="margin-top: 130px"], [style*="margin-top: 120px"] { margin-top: 72px !important; }
+      [style*="margin-top: 110px"] { margin-top: 64px !important; }
+      [style*="margin-top: 90px"], [style*="margin-top: 80px"] { margin-top: 56px !important; }
+      [style*="padding-top: 52px"] { padding-top: 36px !important; }
+      [style*="min-height: 360px"] { min-height: 260px !important; }
+      h1[style*="font-size: 72px"] br { display: none; }
+    }
+    .wordmark:hover { color: #BE3A4F !important; background-size: 100% 2px !important; }
+    .email-cta .email-hover { display: none; }
+    .email-cta:hover .email-default { display: none; }
+    .email-cta:hover .email-hover { display: inline; }
+    .cta-pill span:last-child { transition: transform .28s cubic-bezier(.22,1,.36,1); }
+    .cta-pill:hover span:last-child { transform: translate(3px,-3px); }
+  </style>
+</helmet>
 
-  about-photo.jpg        — your photo (used on Home + About)
-  case-01-cover.jpg      — Bloat Tracker cover
-  case-01-process.jpg    — Bloat Tracker process image
-  case-02-cover.jpg      — Project 02 cover
-  case-02-process.jpg    — Project 02 process image
-  case-03-cover.jpg      — Project 03 cover
-  case-03-process.jpg    — Project 03 process image
-  case-04-cover.jpg      — Project 04 cover
-  case-04-process.jpg    — Project 04 process image
+<div style="background:#FAF7F1; color:#1C1B1A; font-family:'Hanken Grotesk',system-ui,sans-serif; min-height:100vh; -webkit-font-smoothing:antialiased; padding-bottom:120px; overflow-x:hidden; position:relative;">
 
-You can use .jpg or .png — if you use .png, update the src in the HTML to match.
+  <!-- MENU -->
+  <div style="position:fixed; top:40px; right:max(32px, calc(50vw - 508px)); z-index:60; display:flex; flex-direction:column; align-items:flex-end; gap:14px;">
+    <button onClick="{{ toggleMenu }}" style="display:flex; align-items:center; justify-content:space-between; gap:16px; min-width:155px; background:#BE3A4F; color:#fff; border:none; border-radius:999px; padding:15px 28px; font-family:'Hanken Grotesk',sans-serif; font-size:18px; font-weight:500; cursor:pointer;" style-hover="background:#A82F43;">
+      <span>Menu</span>
+      <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+        <span style="font-size:22px; line-height:1;">&times;</span>
+      </sc-if>
+      <sc-if value="{{ menuClosed }}" hint-placeholder-val="{{ true }}">
+        <span style="display:inline-flex; flex-direction:column; gap:4px;">
+          <span style="display:block; width:20px; height:2px; background:#fff; border-radius:2px;"></span>
+          <span style="display:block; width:20px; height:2px; background:#fff; border-radius:2px;"></span>
+        </span>
+      </sc-if>
+    </button>
+    <div style="{{ menuPanelStyle }}">
+      <a href="index.html" style="display:flex; align-items:center; justify-content:center; width:155px; background:#E8C7CD; color:#A82F43; border-radius:999px; padding:14px 0; font-family:'Hanken Grotesk',sans-serif; font-size:17px; font-weight:600; text-decoration:none;" style-hover="background:#DDB1B9;">Home</a>
+      <a href="About.dc.html" style="display:flex; align-items:center; justify-content:center; width:155px; background:#E8C7CD; color:#A82F43; border-radius:999px; padding:14px 0; font-family:'Hanken Grotesk',sans-serif; font-size:17px; font-weight:600; text-decoration:none;" style-hover="background:#DDB1B9;">About</a>
+      <a href="Cases.dc.html" style="display:flex; align-items:center; justify-content:center; width:155px; background:#E8C7CD; color:#A82F43; border-radius:999px; padding:14px 0; font-family:'Hanken Grotesk',sans-serif; font-size:17px; font-weight:600; text-decoration:none;" style-hover="background:#DDB1B9;">Cases</a>
+      <a href="mailto:albacperote@gmail.com" style="display:flex; align-items:center; justify-content:center; width:155px; background:#E8C7CD; color:#A82F43; border-radius:999px; padding:14px 0; font-family:'Hanken Grotesk',sans-serif; font-size:17px; font-weight:600; text-decoration:none;" style-hover="background:#DDB1B9;">Contact</a>
+    </div>
+  </div>
+
+  <div style="max-width:1080px; margin:0 auto; padding:0 32px;">
+
+    <!-- author -->
+    <a class="wordmark" href="index.html" style="display:inline-block; margin-top:52px; font-family:'Bricolage Grotesque',sans-serif; font-size:23px; font-weight:700; letter-spacing:-0.02em; color:#1C1B1A; text-decoration:none; padding-bottom:3px; background-image:linear-gradient(#BE3A4F,#BE3A4F); background-repeat:no-repeat; background-position:left bottom; background-size:0% 2px; transition:background-size .32s cubic-bezier(.22,1,.36,1), color .25s ease;">Alba Castrillo<span style="color:#BE3A4F;">.</span></a>
+
+    <!-- ABOUT label -->
+    <div style="text-align:center; margin-top:90px; font-size:20px; font-weight:600; color:#1C1B1A;">[About]</div>
+
+    <!-- ABOUT CARD -->
+    <div style="margin-top:36px; background:#F4EFE7; border:1px solid #E7E1D6; border-radius:28px; padding:18px; display:grid; grid-template-columns:1fr 1fr; gap:24px; align-items:stretch;">
+      <div style="padding:30px 26px 30px 30px; display:flex; flex-direction:column;">
+        <div style="font-size:20px; font-weight:600; color:#1C1B1A; margin-bottom:34px;">[About me]</div>
+        <div style="display:flex; flex-direction:column; gap:22px; max-width:460px;">
+          <p style="font-size:18px; line-height:1.6; color:#6E6A62; margin:0;"><strong style="color:#1C1B1A;">Hey! I'm Alba,</strong> a biomedical engineer with a background in Human-Centered AI, working at the intersection of design, technology, and healthcare.</p>
+          <p style="font-size:18px; line-height:1.6; color:#6E6A62; margin:0;">I design user-centered digital experiences, combining research, data, and prototyping to create solutions that are both intuitive and technically grounded.</p>
+          <p style="font-size:18px; line-height:1.6; color:#6E6A62; margin:0;">With experience in clinical environments, I bring a real understanding of how health systems work and how thoughtful design can improve everyday experiences for both patients and professionals.</p>
+        </div>
+        <a class="cta-pill" href="CV.pdf" download style="display:inline-flex; align-items:center; gap:14px; align-self:flex-start; margin-top:36px; background:#BE3A4F; color:#fff; border-radius:999px; padding:13px 14px 13px 24px; font-size:17px; font-weight:600; text-decoration:none;" style-hover="background:#A82F43;">
+          Download CV
+          <span style="display:inline-flex; width:34px; height:34px; align-items:center; justify-content:center; background:#fff; color:#BE3A4F; border-radius:50%; font-size:16px;">&#8595;</span>
+        </a>
+      </div>
+      <img src="images/about-photo.jpg" alt="Drop your photo" style="display:block; width:100%; height:100%; min-height:380px; object-fit:cover; border-radius:18px; background:#EDE8DF;" />
+    </div>
+
+    <!-- WHAT CAN I DO -->
+    <div style="margin-top:110px;">
+      <div style="font-size:20px; font-weight:600; color:#1C1B1A; margin-bottom:30px;">[What Can I Do]</div>
+      <div style="display:flex; flex-direction:column; gap:18px;">
+
+        <div style="background:#E7CFD1; border-radius:20px; padding:30px 36px;">
+          <h3 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:26px; color:#BE3A4F; margin:0 0 8px;">Human-Centered Approach</h3>
+          <p style="font-size:18px; line-height:1.5; color:#8A7F7C; margin:0;">Understanding user needs through research, observation, and real-world context.</p>
+        </div>
+
+        <div style="background:#BE3A4F; border-radius:20px; padding:30px 36px;">
+          <h3 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:26px; color:#fff; margin:0 0 8px;">Data-Driven Design</h3>
+          <p style="font-size:18px; line-height:1.5; color:#FBE7EB; margin:0;">Translating data and insights into clear, intuitive user experiences.</p>
+        </div>
+
+        <div style="background:#E3A9B0; border-radius:20px; padding:30px 36px;">
+          <h3 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:26px; color:#A82F43; margin:0 0 8px;">Prototyping &amp; Development</h3>
+          <p style="font-size:18px; line-height:1.5; color:#8A4853; margin:0;">Designing and building interactive solutions, from concept to implementation.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- EXPERIENCE -->
+    <div style="margin-top:110px;">
+      <div style="font-size:20px; font-weight:600; color:#1C1B1A; margin-bottom:30px;">[Experience]</div>
+      <div style="display:flex; flex-direction:column; gap:18px;">
+
+        <!-- highlighted current role -->
+        <div style="background:#E5AAB1; border-radius:22px; padding:34px 36px; display:grid; grid-template-columns:1fr 1fr; gap:40px;">
+          <div>
+            <h3 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:26px; color:#1C1B1A; margin:0;">TracInnovations</h3>
+            <div style="font-size:18px; color:#5A2A33; margin-top:4px; margin-bottom:20px;">Clinical Scientist</div>
+            <div style="display:flex; flex-direction:column; gap:12px; align-items:flex-start;">
+              <span style="background:#fff; border-radius:999px; padding:10px 20px; font-size:15px; font-weight:500; color:#A82F43;">Sep 2025 &ndash; Current</span>
+              <span style="background:#fff; border-radius:999px; padding:10px 20px; font-size:15px; font-weight:500; color:#A82F43;">Copenhagen, Denmark</span>
+            </div>
+          </div>
+          <div style="display:flex; flex-direction:column;">
+            <div style="display:flex; gap:14px; padding:14px 0; border-bottom:1px solid #D58D96;">
+              <span style="flex:none; width:9px; height:9px; border-radius:50%; background:#A82F43; margin-top:8px;"></span>
+              <p style="font-size:17px; line-height:1.45; color:#5A2A33; margin:0;">Design and build software solutions for motion correction in MRI.</p>
+            </div>
+            <div style="display:flex; gap:14px; padding:14px 0; border-bottom:1px solid #D58D96;">
+              <span style="flex:none; width:9px; height:9px; border-radius:50%; background:#A82F43; margin-top:8px;"></span>
+              <p style="font-size:17px; line-height:1.45; color:#5A2A33; margin:0;">Test and validate new system features at the scanner.</p>
+            </div>
+            <div style="display:flex; gap:14px; padding:14px 0;">
+              <span style="flex:none; width:9px; height:9px; border-radius:50%; background:#A82F43; margin-top:8px;"></span>
+              <p style="font-size:17px; line-height:1.45; color:#5A2A33; margin:0;">Provide MR-related support.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- regular roles -->
+        <div style="background:#fff; border:1px solid #E7E1D6; border-radius:18px; padding:26px 32px; display:grid; grid-template-columns:1.2fr 1fr auto; gap:24px; align-items:center;">
+          <h3 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:21px; margin:0;">TracInnovations</h3>
+          <div style="font-size:17px; color:#4A4843;">Software Developer</div>
+          <div style="display:flex; gap:10px;">
+            <span style="border:1px solid #D9D3C8; border-radius:999px; padding:8px 16px; font-size:14px; font-weight:500; color:#5A5750;">Feb 2024 &ndash; Aug 2025</span>
+            <span style="border:1px solid #D9D3C8; border-radius:999px; padding:8px 16px; font-size:14px; font-weight:500; color:#5A5750;">Copenhagen, Denmark</span>
+          </div>
+        </div>
+
+        <div style="background:#fff; border:1px solid #E7E1D6; border-radius:18px; padding:26px 32px; display:grid; grid-template-columns:1.2fr 1fr auto; gap:24px; align-items:center;">
+          <h3 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:21px; margin:0; line-height:1.25;">12 de Octubre University Hospital</h3>
+          <div style="font-size:17px; color:#4A4843;">Health Informatics Intern</div>
+          <div style="display:flex; gap:10px;">
+            <span style="border:1px solid #D9D3C8; border-radius:999px; padding:8px 16px; font-size:14px; font-weight:500; color:#5A5750;">May &ndash; July 2022</span>
+            <span style="border:1px solid #D9D3C8; border-radius:999px; padding:8px 16px; font-size:14px; font-weight:500; color:#5A5750;">Madrid, Spain</span>
+          </div>
+        </div>
+
+        <div style="background:#fff; border:1px solid #E7E1D6; border-radius:18px; padding:26px 32px; display:grid; grid-template-columns:1.2fr 1fr auto; gap:24px; align-items:center;">
+          <h3 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:21px; margin:0; line-height:1.25;">Fundación Alcorcón University Hospital</h3>
+          <div style="font-size:17px; color:#4A4843;">Clinical Technology Intern</div>
+          <div style="display:flex; gap:10px;">
+            <span style="border:1px solid #D9D3C8; border-radius:999px; padding:8px 16px; font-size:14px; font-weight:500; color:#5A5750;">Sep 2021 &ndash; April 2022</span>
+            <span style="border:1px solid #D9D3C8; border-radius:999px; padding:8px 16px; font-size:14px; font-weight:500; color:#5A5750;">Madrid, Spain</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CONTACT -->
+    <div style="margin-top:120px;">
+      <p style="font-size:20px; font-weight:500; margin:0;">Made it this far? <span style="color:#BE3A4F;">I'd love to hear from you.</span></p>
+      <a class="email-cta" href="mailto:albacperote@gmail.com" style="display:inline-flex; align-items:center; gap:14px; margin-top:26px; padding-bottom:14px; border-bottom:2px solid #1C1B1A; font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:40px; letter-spacing:-0.02em; color:#1C1B1A; text-decoration:none;">
+        <span style="color:#BE3A4F; font-size:34px;">&#8599;</span>
+        <span class="email-default">albacperote@gmail.com</span><span class="email-hover">Let's talk!</span>
+      </a>
+      <p style="font-size:18px; margin:26px 0 0; font-style:italic; color:#4A4843;">or find me on <a href="#" style="color:#1C1B1A; font-style:normal; font-weight:500; text-decoration:none;">[LinkedIn]</a></p>
+    </div>
+
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { menuOpen: false };
+  renderVals() {
+    const open = this.state.menuOpen;
+    return {
+      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
+      menuOpen: open,
+      menuClosed: !open,
+      menuPanelStyle: {
+        display: "flex", flexDirection: "column", gap: "12px", alignItems: "flex-end",
+        transition: "opacity 0.28s ease, transform 0.32s cubic-bezier(0.22,1,0.36,1)",
+        opacity: open ? 1 : 0,
+        transform: open ? "translateY(0)" : "translateY(-8px)",
+        pointerEvents: open ? "auto" : "none",
+      },
+    };
+  }
+}
+</script>
+</body>
+</html>

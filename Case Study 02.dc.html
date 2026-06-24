@@ -86,13 +86,13 @@
         <span style="display:inline-flex; width:22px; height:22px; align-items:center; justify-content:center; background:#BE3A4F; color:#fff; border-radius:50%; font-size:13px;">←</span>
         Back
       </a>
-      <div style="font-size:19px; font-weight:500; margin-bottom:22px;">[Case 01]</div>
+      <div style="font-size:19px; font-weight:500; margin-bottom:22px;">[Case 02]</div>
       <h1 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:54px; line-height:1.15; letter-spacing:-0.02em; margin:0 auto; max-width:720px;">Bloat Tracker: Understanding Digestive Triggers Through Data</h1>
       <div style="margin-top:24px; font-size:20px; font-weight:500; color:#5A5750;">Healthcare</div>
     </div>
 
     <!-- cover image -->
-    <img src="images/case-01-cover.jpg" alt="Drop project cover — phone mockups" style="display:block; width:100%; height:480px; margin-top:56px; object-fit:cover; border-radius:20px; background:#EDE8DF;" />
+    <img src="images/case-02-cover.jpg" alt="Drop project cover — phone mockups" style="display:block; width:100%; height:480px; margin-top:56px; object-fit:cover; border-radius:20px; background:#EDE8DF;" />
 
     <!-- INTRO + SIDEBAR -->
     <div style="display:grid; grid-template-columns:1fr 360px; gap:64px; margin-top:90px; align-items:start;">
@@ -205,24 +205,8 @@
 
     <!-- PROCESS IMAGE -->
     <div style="margin-top:48px;">
-      <button onClick="{{ openZoom }}" style="display:block; width:100%; padding:0; border:1px solid #E7E1D6; border-radius:20px; overflow:hidden; cursor:zoom-in; background:#EDE8DF; position:relative; font-family:inherit;">
-        <img src="images/case-01-process.jpg" alt="User flow map" draggable="false" style="display:block; width:100%; height:auto;" />
-        <span style="position:absolute; bottom:16px; right:16px; display:inline-flex; align-items:center; gap:8px; background:rgba(28,27,26,0.85); color:#fff; border-radius:999px; padding:10px 18px; font-size:14px; font-weight:600; pointer-events:none;">&#10530; Click to zoom</span>
-      </button>
-      <p style="font-size:15px; color:#7A776F; margin:14px 0 0;">Full user-flow map — click to explore in detail.</p>
+      <img src="images/case-02-process.jpg" alt="Drop a process image" style="display:block; width:100%; height:480px; object-fit:cover; border-radius:20px; background:#EDE8DF;" />
     </div>
-
-    <!-- ZOOM LIGHTBOX -->
-    <sc-if value="{{ zoomOpen }}" hint-placeholder-val="{{ false }}">
-    <div style="{{ zoomOverlayStyle }}" onClick="{{ closeZoomBackdrop }}" onWheel="{{ onWheel }}">
-      <div style="position:fixed; top:24px; right:24px; display:flex; gap:10px; z-index:2;">
-        <button onClick="{{ zoomOut }}" style="width:46px; height:46px; border:none; border-radius:50%; background:#fff; color:#1C1B1A; font-size:26px; cursor:pointer; display:flex; align-items:center; justify-content:center;">&minus;</button>
-        <button onClick="{{ zoomIn }}" style="width:46px; height:46px; border:none; border-radius:50%; background:#fff; color:#1C1B1A; font-size:22px; cursor:pointer; display:flex; align-items:center; justify-content:center;">+</button>
-        <button onClick="{{ closeZoom }}" style="width:46px; height:46px; border:none; border-radius:50%; background:#BE3A4F; color:#fff; font-size:20px; cursor:pointer; display:flex; align-items:center; justify-content:center;">&times;</button>
-      </div>
-      <img src="images/case-01-process.jpg" alt="User flow map" draggable="false" onPointerDown="{{ onPanStart }}" onPointerMove="{{ onPanMove }}" onPointerUp="{{ onPanEnd }}" style="{{ zoomImgStyle }}" />
-    </div>
-    </sc-if>
 
     <!-- KEY LEARNINGS -->
     <div style="margin-top:110px;">
@@ -249,17 +233,17 @@
 
     <!-- PREV / NEXT -->
     <div style="margin-top:120px; display:grid; grid-template-columns:1fr 1fr; gap:18px;">
-      <a class="case-nav prev" href="Case Study 04.dc.html" style="display:flex; align-items:center; gap:18px; background:#fff; border:1px solid #E7E1D6; border-radius:20px; padding:24px 28px; text-decoration:none; color:inherit;">
+      <a class="case-nav prev" href="Case Study.dc.html" style="display:flex; align-items:center; gap:18px; background:#fff; border:1px solid #E7E1D6; border-radius:20px; padding:24px 28px; text-decoration:none; color:inherit;">
         <span class="nav-arrow" style="flex:none; display:inline-flex; width:42px; height:42px; align-items:center; justify-content:center; background:#BE3A4F; color:#fff; border-radius:50%; font-size:18px;">&larr;</span>
         <span>
           <span style="display:block; font-size:14px; color:#7A776F; margin-bottom:4px;">Previous</span>
-          <span style="display:block; font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:20px; letter-spacing:-0.01em;">Case 04</span>
+          <span style="display:block; font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:20px; letter-spacing:-0.01em;">Case 01</span>
         </span>
       </a>
-      <a class="case-nav next" href="Case Study 02.dc.html" style="display:flex; align-items:center; justify-content:flex-end; gap:18px; background:#fff; border:1px solid #E7E1D6; border-radius:20px; padding:24px 28px; text-decoration:none; color:inherit; text-align:right;">
+      <a class="case-nav next" href="Case Study 03.dc.html" style="display:flex; align-items:center; justify-content:flex-end; gap:18px; background:#fff; border:1px solid #E7E1D6; border-radius:20px; padding:24px 28px; text-decoration:none; color:inherit; text-align:right;">
         <span>
           <span style="display:block; font-size:14px; color:#7A776F; margin-bottom:4px;">Next</span>
-          <span style="display:block; font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:20px; letter-spacing:-0.01em;">Case 02</span>
+          <span style="display:block; font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:20px; letter-spacing:-0.01em;">Case 03</span>
         </span>
         <span class="nav-arrow" style="flex:none; display:inline-flex; width:42px; height:42px; align-items:center; justify-content:center; background:#BE3A4F; color:#fff; border-radius:50%; font-size:18px;">&rarr;</span>
       </a>
@@ -280,12 +264,9 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  state = { menuOpen: false, zoom: { open: false, scale: 1, tx: 0, ty: 0, dragging: false } };
-  setZoom(patch) { this.setState(s => ({ zoom: { ...s.zoom, ...patch } })); }
-  lockScroll(on) { document.body.style.overflow = on ? "hidden" : ""; }
+  state = { menuOpen: false };
   renderVals() {
     const open = this.state.menuOpen;
-    const z = this.state.zoom;
     return {
       toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
       menuOpen: open,
@@ -296,29 +277,6 @@ class Component extends DCLogic {
         opacity: open ? 1 : 0,
         transform: open ? "translateY(0)" : "translateY(-8px)",
         pointerEvents: open ? "auto" : "none",
-      },
-      zoomOpen: z.open,
-      openZoom: () => { this.lockScroll(true); this.setZoom({ open: true, scale: 1, tx: 0, ty: 0 }); },
-      closeZoom: () => { this.lockScroll(false); this.setZoom({ open: false }); },
-      closeZoomBackdrop: (e) => { if (e.target === e.currentTarget) { this.lockScroll(false); this.setZoom({ open: false }); } },
-      zoomIn: () => this.setZoom({ scale: Math.min(z.scale * 1.35, 6) }),
-      zoomOut: () => { const ns = Math.max(z.scale / 1.35, 1); this.setZoom(ns === 1 ? { scale: 1, tx: 0, ty: 0 } : { scale: ns }); },
-      onWheel: (e) => { try { e.preventDefault(); } catch (_) {} const f = e.deltaY < 0 ? 1.12 : 1 / 1.12; const ns = Math.min(Math.max(z.scale * f, 1), 6); this.setZoom(ns === 1 ? { scale: 1, tx: 0, ty: 0 } : { scale: ns }); },
-      onPanStart: (e) => { if (z.scale <= 1) return; try { e.target.setPointerCapture(e.pointerId); } catch (_) {} this._drag = { x: e.clientX, y: e.clientY, tx: z.tx, ty: z.ty }; this.setZoom({ dragging: true }); },
-      onPanMove: (e) => { if (!this._drag) return; this.setZoom({ tx: this._drag.tx + (e.clientX - this._drag.x), ty: this._drag.ty + (e.clientY - this._drag.y) }); },
-      onPanEnd: () => { if (this._drag) { this._drag = null; this.setZoom({ dragging: false }); } },
-      zoomOverlayStyle: {
-        position: "fixed", inset: 0, zIndex: 200, background: "rgba(20,18,17,0.93)",
-        display: "flex", alignItems: "center", justifyContent: "center",
-        overflow: "hidden", touchAction: "none",
-        cursor: z.scale > 1 ? "grab" : "zoom-out",
-      },
-      zoomImgStyle: {
-        maxWidth: "94vw", maxHeight: "90vh", objectFit: "contain", userSelect: "none",
-        transform: `translate(${z.tx}px, ${z.ty}px) scale(${z.scale})`,
-        transition: z.dragging ? "none" : "transform .18s ease",
-        cursor: z.scale > 1 ? (z.dragging ? "grabbing" : "grab") : "auto",
-        willChange: "transform",
       },
     };
   }

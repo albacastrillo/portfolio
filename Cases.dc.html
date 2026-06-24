@@ -9,8 +9,8 @@
 <x-dc>
 <helmet>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&amp;family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&amp;display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; }
     html, body { margin: 0; padding: 0; }
@@ -43,11 +43,6 @@
     .email-cta .email-hover { display: none; }
     .email-cta:hover .email-default { display: none; }
     .email-cta:hover .email-hover { display: inline; }
-    .case-nav { transition: border-color .25s ease; }
-    .case-nav:hover { border-color: #D8CFC0 !important; }
-    .case-nav .nav-arrow { transition: transform .28s cubic-bezier(.22,1,.36,1); }
-    .case-nav.next:hover .nav-arrow { transform: translateX(4px); }
-    .case-nav.prev:hover .nav-arrow { transform: translateX(-4px); }
   </style>
 </helmet>
 
@@ -77,183 +72,114 @@
 
   <div style="max-width:1080px; margin:0 auto; padding:0 32px;">
 
-    <!-- author -->
+    <!-- author (links home) -->
     <a class="wordmark" href="index.html" style="display:inline-block; margin-top:52px; font-family:'Bricolage Grotesque',sans-serif; font-size:23px; font-weight:700; letter-spacing:-0.02em; color:#1C1B1A; text-decoration:none; padding-bottom:3px; background-image:linear-gradient(#BE3A4F,#BE3A4F); background-repeat:no-repeat; background-position:left bottom; background-size:0% 2px; transition:background-size .32s cubic-bezier(.22,1,.36,1), color .25s ease;">Alba Castrillo<span style="color:#BE3A4F;">.</span></a>
 
-    <!-- HERO -->
-    <div style="position:relative; margin-top:70px; text-align:center;">
-      <a class="case-back" href="Cases.dc.html" style="display:flex; width:fit-content; margin:0 0 24px 0; align-items:center; gap:9px; background:#fff; border:1px solid #E7E1D6; border-radius:12px; padding:11px 18px; font-size:16px; font-weight:500; color:#1C1B1A; text-decoration:none; box-shadow:0 2px 8px rgba(0,0,0,0.04);" style-hover="background:#F4EFE7;">
-        <span style="display:inline-flex; width:22px; height:22px; align-items:center; justify-content:center; background:#BE3A4F; color:#fff; border-radius:50%; font-size:13px;">←</span>
-        Back
-      </a>
-      <div style="font-size:19px; font-weight:500; margin-bottom:22px;">[Case 01]</div>
-      <h1 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:54px; line-height:1.15; letter-spacing:-0.02em; margin:0 auto; max-width:720px;">Bloat Tracker: Understanding Digestive Triggers Through Data</h1>
-      <div style="margin-top:24px; font-size:20px; font-weight:500; color:#5A5750;">Healthcare</div>
+    <!-- HEADER -->
+    <div style="text-align:center; margin-top:70px;">
+      <div style="font-size:20px; font-weight:600; color:#1C1B1A;">[Cases]</div>
     </div>
 
-    <!-- cover image -->
-    <img src="images/case-01-cover.jpg" alt="Drop project cover — phone mockups" style="display:block; width:100%; height:480px; margin-top:56px; object-fit:cover; border-radius:20px; background:#EDE8DF;" />
+    <!-- STACKED CASE CARDS -->
+    <div style="display:flex; flex-direction:column; gap:40px; margin-top:70px;">
 
-    <!-- INTRO + SIDEBAR -->
-    <div style="display:grid; grid-template-columns:1fr 360px; gap:64px; margin-top:90px; align-items:start;">
-
-      <div>
-        <h2 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:36px; line-height:1.18; letter-spacing:-0.02em; margin:0;">Bloat Tracker: Understanding Digestive Triggers Through Data</h2>
-        <p style="font-size:19px; line-height:1.6; color:#4A4843; margin:22px 0 0; max-width:560px;">Helping users track daily habits and identify patterns behind bloating through a simple, intuitive mobile experience.</p>
-
-        <div style="margin-top:54px; font-size:19px; font-weight:600;">[Project Overview]</div>
-        <p style="font-size:18px; line-height:1.65; color:#4A4843; margin:18px 0 0; max-width:580px;">Tracking the causes of bloating is often inconsistent and mentally demanding. This project focused on designing an intuitive mobile app that enables users to quickly log meals, activities and symptoms to identify patterns, using iterative prototyping and user testing to refine the solution.</p>
-
-        <div style="margin-top:48px; font-size:19px; font-weight:600;">[Problem Statement]</div>
-        <p style="font-size:18px; line-height:1.65; color:#4A4843; margin:18px 0 0; max-width:580px;">Bloating is a common digestive issue, with research indicating that nearly 18% of the population experiences it at least once per week. However, identifying its causes remains challenging, as users often rely on memory or inconsistent tracking methods. This lack of structured tracking makes it difficult to uncover patterns between daily habits and symptoms.</p>
-      </div>
-
-      <!-- sidebar card -->
-      <aside style="background:#FCFAF5; border:1px solid #E7E1D6; border-radius:24px; padding:30px 28px;">
-        <div style="display:flex; flex-direction:column; gap:24px;">
-
-          <div>
-            <div style="font-size:16px; font-weight:600; margin-bottom:12px;">[Industry]</div>
-            <span style="display:inline-block; background:#fff; border:1px solid #D9D3C8; border-radius:999px; padding:9px 18px; font-size:15px; font-weight:500; color:#5A5750;">Healthcare</span>
+      <!-- Case 01 -->
+      <a href="Case Study.dc.html" style="display:block; text-decoration:none; color:inherit;">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:0; background:#fff; border:1px solid #E7E1D6; border-radius:26px; overflow:hidden;" style-hover="border-color:#D8CFC0;">
+          <div style="background:#EDE8DF; padding:30px;">
+            <img src="images/case-01-cover.jpg" alt="Bloat Tracker cover" style="display:block; width:100%; height:100%; min-height:360px; object-fit:cover; border-radius:14px; background:#EDE8DF;" />
           </div>
-
-          <div>
-            <div style="font-size:16px; font-weight:600; margin-bottom:12px;">[My Role]</div>
-            <span style="display:inline-block; background:#fff; border:1px solid #D9D3C8; border-radius:999px; padding:9px 18px; font-size:15px; font-weight:500; color:#5A5750;">UX Designer &amp; Developer</span>
-          </div>
-
-          <div>
-            <div style="font-size:16px; font-weight:600; margin-bottom:12px;">[Platforms]</div>
-            <span style="display:inline-block; background:#fff; border:1px solid #D9D3C8; border-radius:999px; padding:9px 18px; font-size:15px; font-weight:500; color:#5A5750;">Mobile (iOS/Android prototype)</span>
-          </div>
-
-          <div>
-            <div style="font-size:16px; font-weight:600; margin-bottom:12px;">[Tools]</div>
-            <span style="display:inline-block; background:#fff; border:1px solid #D9D3C8; border-radius:999px; padding:9px 18px; font-size:15px; font-weight:500; color:#5A5750;">Figma, React Native</span>
-          </div>
-
-          <div>
-            <div style="font-size:16px; font-weight:600; margin-bottom:12px;">[Timeline]</div>
-            <span style="display:inline-block; background:#fff; border:1px solid #D9D3C8; border-radius:999px; padding:9px 18px; font-size:15px; font-weight:500; color:#5A5750;">March 2024 – May 2024</span>
-          </div>
-
-          <div style="margin-top:6px;">
-            <div style="font-size:16px; font-weight:600; margin-bottom:12px;">[Live Prototypes]</div>
-            <div style="display:flex; flex-direction:column; gap:10px;">
-              <a class="cta-pill" href="#" style="display:flex; align-items:center; justify-content:space-between; background:#BE3A4F; color:#fff; border-radius:999px; padding:13px 14px 13px 22px; font-size:17px; font-weight:500; text-decoration:none;" style-hover="background:#A82F43;">
-                Onboarding Flow
-                <span style="display:inline-flex; width:34px; height:34px; align-items:center; justify-content:center; background:#fff; color:#BE3A4F; border-radius:50%; font-size:15px;">↗</span>
-              </a>
-              <a class="cta-pill" href="#" style="display:flex; align-items:center; justify-content:space-between; background:#BE3A4F; color:#fff; border-radius:999px; padding:13px 14px 13px 22px; font-size:17px; font-weight:500; text-decoration:none;" style-hover="background:#A82F43;">
-                Daily Logging
-                <span style="display:inline-flex; width:34px; height:34px; align-items:center; justify-content:center; background:#fff; color:#BE3A4F; border-radius:50%; font-size:15px;">↗</span>
-              </a>
-              <a class="cta-pill" href="#" style="display:flex; align-items:center; justify-content:space-between; background:#BE3A4F; color:#fff; border-radius:999px; padding:13px 14px 13px 22px; font-size:17px; font-weight:500; text-decoration:none;" style-hover="background:#A82F43;">
-                Insights Dashboard
-                <span style="display:inline-flex; width:34px; height:34px; align-items:center; justify-content:center; background:#fff; color:#BE3A4F; border-radius:50%; font-size:15px;">↗</span>
-              </a>
+          <div style="padding:46px 44px; display:flex; flex-direction:column;">
+            <div style="font-size:16px; color:#7A776F; margin-bottom:12px;">Healthcare</div>
+            <h3 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:28px; line-height:1.2; letter-spacing:-0.02em; margin:0;">Bloat Tracker: Understanding Digestive Triggers Through Data</h3>
+            <p style="font-size:17px; line-height:1.6; color:#4A4843; margin:18px 0 0;">Tracking the causes of bloating is often inconsistent and mentally demanding. This project focused on designing an intuitive mobile app that enables users to quickly log meals, activities and symptoms to identify patterns, using iterative prototyping and user testing to refine the solution.</p>
+            <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:22px;">
+              <span style="border:1px solid #D9D3C8; border-radius:999px; padding:8px 16px; font-size:14px; color:#5A5750;">Health Tech</span>
+              <span style="border:1px solid #D9D3C8; border-radius:999px; padding:8px 16px; font-size:14px; color:#5A5750;">UX Design</span>
+              <span style="border:1px solid #D9D3C8; border-radius:999px; padding:8px 16px; font-size:14px; color:#5A5750;">Product Design</span>
+            </div>
+            <div class="cta-pill" style="display:flex; align-items:center; justify-content:space-between; background:#F3DEE0; border-radius:999px; padding:14px 14px 14px 26px; margin-top:auto; margin-top:28px; font-size:18px; font-weight:600; color:#BE3A4F;">
+              View Full Case Study
+              <span style="display:inline-flex; width:40px; height:40px; align-items:center; justify-content:center; background:#BE3A4F; color:#fff; border-radius:50%; font-size:17px;">&#8599;</span>
             </div>
           </div>
-
         </div>
-      </aside>
-    </div>
-
-    <!-- PROCESS -->
-    <div style="margin-top:110px;">
-      <div style="font-size:20px; font-weight:600; margin-bottom:28px;">[Process]</div>
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:28px;">
-
-        <div style="background:#F1ECE2; border:1px solid #E4DDD0; border-radius:22px; padding:34px 32px;">
-          <h3 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:25px; margin:0 0 6px;"><span style="color:#1C1B1A;">[01]</span> User Research</h3>
-          <div style="display:flex; flex-direction:column;">
-            <p style="font-size:17px; line-height:1.55; color:#4A4843; margin:18px 0; border-bottom:1px solid #DDD5C7; padding-bottom:18px;">Conducted exploratory research to understand how users track health-related symptoms.</p>
-            <p style="font-size:17px; line-height:1.55; color:#4A4843; margin:0 0 18px; border-bottom:1px solid #DDD5C7; padding-bottom:18px;">Identified common challenges in remembering daily habits and triggers.</p>
-            <p style="font-size:17px; line-height:1.55; color:#4A4843; margin:0;">Reviewed existing solutions to understand gaps in usability and functionality.</p>
-          </div>
-        </div>
-
-        <div style="background:#F1ECE2; border:1px solid #E4DDD0; border-radius:22px; padding:34px 32px;">
-          <h3 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:25px; margin:0 0 6px;"><span style="color:#1C1B1A;">[02]</span> Insights</h3>
-          <div style="display:flex; flex-direction:column;">
-            <p style="font-size:17px; line-height:1.55; color:#4A4843; margin:18px 0; border-bottom:1px solid #DDD5C7; padding-bottom:18px;">Tracking is often inconsistent and mentally demanding.</p>
-            <p style="font-size:17px; line-height:1.55; color:#4A4843; margin:0 0 18px; border-bottom:1px solid #DDD5C7; padding-bottom:18px;">Users need a low-effort logging experience.</p>
-            <p style="font-size:17px; line-height:1.55; color:#4A4843; margin:0;">Clear visualization is key to identifying patterns.</p>
-          </div>
-        </div>
-
-        <div style="background:#F1ECE2; border:1px solid #E4DDD0; border-radius:22px; padding:34px 32px;">
-          <h3 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:25px; margin:0 0 6px;"><span style="color:#1C1B1A;">[03]</span> Design Solution</h3>
-          <div style="display:flex; flex-direction:column;">
-            <p style="font-size:17px; line-height:1.55; color:#4A4843; margin:18px 0; border-bottom:1px solid #DDD5C7; padding-bottom:18px;">Developed initial wireframes focusing on simplicity and quick input.</p>
-            <p style="font-size:17px; line-height:1.55; color:#4A4843; margin:0 0 18px; border-bottom:1px solid #DDD5C7; padding-bottom:18px;">Designed key features: meal logging, activity tracking and symptom recording.</p>
-            <p style="font-size:17px; line-height:1.55; color:#4A4843; margin:0;">Created interactive prototypes in Figma.</p>
-          </div>
-        </div>
-
-        <div style="background:#F1ECE2; border:1px solid #E4DDD0; border-radius:22px; padding:34px 32px;">
-          <h3 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:25px; margin:0 0 6px;"><span style="color:#1C1B1A;">[04]</span> Testing &amp; Iteration</h3>
-          <div style="display:flex; flex-direction:column;">
-            <p style="font-size:17px; line-height:1.55; color:#4A4843; margin:18px 0; border-bottom:1px solid #DDD5C7; padding-bottom:18px;">Conducted usability testing with 8 participants performing key tasks independently.</p>
-            <p style="font-size:17px; line-height:1.55; color:#4A4843; margin:0 0 18px; border-bottom:1px solid #DDD5C7; padding-bottom:18px;">Identified friction points through task completion time, errors, and user feedback.</p>
-            <p style="font-size:17px; line-height:1.55; color:#4A4843; margin:0;">Iterated on the design by simplifying flows, improving labels, and reducing steps.</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- PROCESS IMAGE -->
-    <div style="margin-top:48px;">
-      <img src="images/case-01-process.jpg" alt="Drop a process image" style="display:block; width:100%; height:480px; object-fit:cover; border-radius:20px; background:#EDE8DF;" />
-    </div>
-
-    <!-- KEY LEARNINGS -->
-    <div style="margin-top:110px;">
-      <div style="font-size:20px; font-weight:600; margin-bottom:28px;">[Key Learnings]</div>
-      <div style="display:flex; flex-direction:column; gap:18px;">
-
-        <div style="background:#E9E1DE; border-radius:18px; padding:26px 32px;">
-          <h3 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:24px; color:#BE3A4F; margin:0 0 8px;">Simplicity is essential</h3>
-          <p style="font-size:17px; line-height:1.55; color:#4A4843; margin:0;">Reducing complexity significantly improves usability in habit-tracking apps.</p>
-        </div>
-
-        <div style="background:#BE3A4F; border-radius:18px; padding:26px 32px;">
-          <h3 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:24px; color:#fff; margin:0 0 8px;">User testing reveals real issues</h3>
-          <p style="font-size:17px; line-height:1.55; color:#FBE7EB; margin:0;">Observing users uncovered friction points not identified during design.</p>
-        </div>
-
-        <div style="background:#EFC9CE; border-radius:18px; padding:26px 32px;">
-          <h3 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:24px; color:#BE3A4F; margin:0 0 8px;">Iteration improves outcomes</h3>
-          <p style="font-size:17px; line-height:1.55; color:#8A4853; margin:0;">Continuous refinement led to a more intuitive and efficient experience.</p>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- PREV / NEXT -->
-    <div style="margin-top:120px; display:grid; grid-template-columns:1fr 1fr; gap:18px;">
-      <a class="case-nav prev" href="Case Study 04.dc.html" style="display:flex; align-items:center; gap:18px; background:#fff; border:1px solid #E7E1D6; border-radius:20px; padding:24px 28px; text-decoration:none; color:inherit;">
-        <span class="nav-arrow" style="flex:none; display:inline-flex; width:42px; height:42px; align-items:center; justify-content:center; background:#BE3A4F; color:#fff; border-radius:50%; font-size:18px;">&larr;</span>
-        <span>
-          <span style="display:block; font-size:14px; color:#7A776F; margin-bottom:4px;">Previous</span>
-          <span style="display:block; font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:20px; letter-spacing:-0.01em;">Case 04</span>
-        </span>
       </a>
-      <a class="case-nav next" href="Case Study 02.dc.html" style="display:flex; align-items:center; justify-content:flex-end; gap:18px; background:#fff; border:1px solid #E7E1D6; border-radius:20px; padding:24px 28px; text-decoration:none; color:inherit; text-align:right;">
-        <span>
-          <span style="display:block; font-size:14px; color:#7A776F; margin-bottom:4px;">Next</span>
-          <span style="display:block; font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:20px; letter-spacing:-0.01em;">Case 02</span>
-        </span>
-        <span class="nav-arrow" style="flex:none; display:inline-flex; width:42px; height:42px; align-items:center; justify-content:center; background:#BE3A4F; color:#fff; border-radius:50%; font-size:18px;">&rarr;</span>
+
+      <!-- Case 02 -->
+      <a href="Case Study 02.dc.html" style="display:block; text-decoration:none; color:inherit;">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:0; background:#fff; border:1px solid #E7E1D6; border-radius:26px; overflow:hidden;" style-hover="border-color:#D8CFC0;">
+          <div style="background:#EDE8DF; padding:30px;">
+            <img src="images/case-02-cover.jpg" alt="Project 02 cover" style="display:block; width:100%; height:100%; min-height:360px; object-fit:cover; border-radius:14px; background:#EDE8DF;" />
+          </div>
+          <div style="padding:46px 44px; display:flex; flex-direction:column;">
+            <div style="font-size:16px; color:#7A776F; margin-bottom:12px;">Data Visualization</div>
+            <h3 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:28px; line-height:1.2; letter-spacing:-0.02em; margin:0;">Understanding Traffic Accidents Through Data Visualization</h3>
+            <p style="font-size:17px; line-height:1.6; color:#4A4843; margin:18px 0 0;">Madrid's road-safety data is extensive but hard to act on. This project transforms years of accident records into clear, interactive visualizations that surface when, where and why incidents happen — turning raw data into insight for safer streets.</p>
+            <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:22px;">
+              <span style="border:1px solid #D9D3C8; border-radius:999px; padding:8px 16px; font-size:14px; color:#5A5750;">Data Visualization</span>
+              <span style="border:1px solid #D9D3C8; border-radius:999px; padding:8px 16px; font-size:14px; color:#5A5750;">Data Analysis</span>
+              <span style="border:1px solid #D9D3C8; border-radius:999px; padding:8px 16px; font-size:14px; color:#5A5750;">Information Design</span>
+            </div>
+            <div class="cta-pill" style="display:flex; align-items:center; justify-content:space-between; background:#F3DEE0; border-radius:999px; padding:14px 14px 14px 26px; margin-top:28px; font-size:18px; font-weight:600; color:#BE3A4F;">
+              View Full Case Study
+              <span style="display:inline-flex; width:40px; height:40px; align-items:center; justify-content:center; background:#BE3A4F; color:#fff; border-radius:50%; font-size:17px;">&#8599;</span>
+            </div>
+          </div>
+        </div>
       </a>
+
+      <!-- Case 03 -->
+      <a href="Case Study 03.dc.html" style="display:block; text-decoration:none; color:inherit;">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:0; background:#fff; border:1px solid #E7E1D6; border-radius:26px; overflow:hidden;" style-hover="border-color:#D8CFC0;">
+          <div style="background:#EDE8DF; padding:30px;">
+            <img src="images/case-03-cover.jpg" alt="Project 03 cover" style="display:block; width:100%; height:100%; min-height:360px; object-fit:cover; border-radius:14px; background:#EDE8DF;" />
+          </div>
+          <div style="padding:46px 44px; display:flex; flex-direction:column;">
+            <div style="font-size:16px; color:#7A776F; margin-bottom:12px;">Healthcare</div>
+            <h3 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:28px; line-height:1.2; letter-spacing:-0.02em; margin:0;">Arrhythmia Tracker: Monitoring Heart Rhythm Through Accessible Mobile Tracking</h3>
+            <p style="font-size:17px; line-height:1.6; color:#4A4843; margin:18px 0 0;">Heart-rhythm monitoring often relies on clinical tools and jargon. This project designs an accessible mobile experience for logging ECG data and symptoms, making consistent heart-health tracking approachable for everyday users.</p>
+            <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:22px;">
+              <span style="border:1px solid #D9D3C8; border-radius:999px; padding:8px 16px; font-size:14px; color:#5A5750;">Health Tech</span>
+              <span style="border:1px solid #D9D3C8; border-radius:999px; padding:8px 16px; font-size:14px; color:#5A5750;">UX Design</span>
+              <span style="border:1px solid #D9D3C8; border-radius:999px; padding:8px 16px; font-size:14px; color:#5A5750;">Mobile App Design</span>
+            </div>
+            <div class="cta-pill" style="display:flex; align-items:center; justify-content:space-between; background:#F3DEE0; border-radius:999px; padding:14px 14px 14px 26px; margin-top:28px; font-size:18px; font-weight:600; color:#BE3A4F;">
+              View Full Case Study
+              <span style="display:inline-flex; width:40px; height:40px; align-items:center; justify-content:center; background:#BE3A4F; color:#fff; border-radius:50%; font-size:17px;">&#8599;</span>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Case 04 -->
+      <a href="Case Study 04.dc.html" style="display:block; text-decoration:none; color:inherit;">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:0; background:#fff; border:1px solid #E7E1D6; border-radius:26px; overflow:hidden;" style-hover="border-color:#D8CFC0;">
+          <div style="background:#EDE8DF; padding:30px;">
+            <img src="images/case-04-cover.jpg" alt="Project 04 cover" style="display:block; width:100%; height:100%; min-height:360px; object-fit:cover; border-radius:14px; background:#EDE8DF;" />
+          </div>
+          <div style="padding:46px 44px; display:flex; flex-direction:column;">
+            <div style="font-size:16px; color:#7A776F; margin-bottom:12px;">Add industry</div>
+            <h3 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:28px; line-height:1.2; letter-spacing:-0.02em; margin:0;">Project Title</h3>
+            <p style="font-size:17px; line-height:1.6; color:#4A4843; margin:18px 0 0;">Short description of this project — the problem you tackled, what you designed, and the impact it had. Replace with your own copy when ready.</p>
+            <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:22px;">
+              <span style="border:1px solid #D9D3C8; border-radius:999px; padding:8px 16px; font-size:14px; color:#5A5750;">Add tag</span>
+            </div>
+            <div class="cta-pill" style="display:flex; align-items:center; justify-content:space-between; background:#F3DEE0; border-radius:999px; padding:14px 14px 14px 26px; margin-top:28px; font-size:18px; font-weight:600; color:#BE3A4F;">
+              View Full Case Study
+              <span style="display:inline-flex; width:40px; height:40px; align-items:center; justify-content:center; background:#BE3A4F; color:#fff; border-radius:50%; font-size:17px;">&#8599;</span>
+            </div>
+          </div>
+        </div>
+      </a>
+
     </div>
 
     <!-- CONTACT -->
     <div style="margin-top:120px;">
       <p style="font-size:20px; font-weight:500; margin:0;">Made it this far? <span style="color:#BE3A4F;">I'd love to hear from you.</span></p>
       <a class="email-cta" href="mailto:albacperote@gmail.com" style="display:inline-flex; align-items:center; gap:14px; margin-top:26px; padding-bottom:14px; border-bottom:2px solid #1C1B1A; font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:40px; letter-spacing:-0.02em; color:#1C1B1A; text-decoration:none;">
-        <span style="color:#BE3A4F; font-size:34px;">↗</span>
+        <span style="color:#BE3A4F; font-size:34px;">&#8599;</span>
         <span class="email-default">albacperote@gmail.com</span><span class="email-hover">Let's talk!</span>
       </a>
       <p style="font-size:18px; margin:26px 0 0; font-style:italic; color:#4A4843;">or find me on <a href="#" style="color:#1C1B1A; font-style:normal; font-weight:500; text-decoration:none;">[LinkedIn]</a></p>
