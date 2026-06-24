@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body { background: #FAF7F1; }
+    ::selection { background: #BE3A4F; color: #fff; }
+    .cta-pill span:last-child { transition: transform .28s cubic-bezier(.22,1,.36,1); }
+    .cta-pill:hover span:last-child { transform: translate(3px,-3px); }
+    @media (max-width: 768px) {
+      [style*="max-width: 1080px"] { padding-left: 20px !important; padding-right: 20px !important; }
+      [style*="grid-template-columns"] { grid-template-columns: 1fr !important; gap: 20px !important; }
+      h1[style*="font-size: 72px"] { font-size: 38px !important; line-height: 1.12 !important; }
+      h1[style*="font-size: 64px"] { font-size: 36px !important; }
+      h1[style*="font-size: 56px"] { font-size: 32px !important; }
+      h1[style*="font-size: 54px"] { font-size: 30px !important; }
+      h2[style*="font-size: 44px"] { font-size: 28px !important; }
+      h2[style*="font-size: 36px"] { font-size: 26px !important; }
+      h3[style*="font-size: 30px"], h3[style*="font-size: 28px"] { font-size: 23px !important; }
+      a[style*="font-size: 40px"] { font-size: 24px !important; flex-wrap: wrap; word-break: break-word; }
+      [style*="padding: 46px 44px"], [style*="padding: 48px 44px"] { padding: 30px 24px !important; }
+      [style*="padding: 34px 36px"] { padding: 26px 24px !important; }
+      [style*="padding: 30px 26px 30px 30px"] { padding: 26px 22px !important; }
+      [style*="margin-top: 130px"], [style*="margin-top: 120px"] { margin-top: 72px !important; }
+      [style*="margin-top: 110px"] { margin-top: 64px !important; }
+      [style*="margin-top: 90px"], [style*="margin-top: 80px"] { margin-top: 56px !important; }
+      [style*="padding-top: 52px"] { padding-top: 36px !important; }
+      [style*="min-height: 360px"] { min-height: 260px !important; }
+      h1[style*="font-size: 72px"] br { display: none; }
+    }
+    .wordmark:hover { color: #BE3A4F !important; background-size: 100% 2px !important; }
+    .email-cta .email-hover { display: none; }
+    .email-cta:hover .email-default { display: none; }
+    .email-cta:hover .email-hover { display: inline; }
+  </style>
+</helmet>
+
+<div style="background:#FAF7F1; color:#1C1B1A; font-family:'Hanken Grotesk',system-ui,sans-serif; min-height:100vh; -webkit-font-smoothing:antialiased; padding-bottom:120px; overflow-x:hidden; position:relative;">
+
+  <!-- MENU -->
+  <div style="position:fixed; top:40px; right:max(32px, calc(50vw - 508px)); z-index:60; display:flex; flex-direction:column; align-items:flex-end; gap:14px;">
+    <button onClick="{{ toggleMenu }}" style="display:flex; align-items:center; justify-content:space-between; gap:16px; min-width:155px; background:#BE3A4F; color:#fff; border:none; border-radius:999px; padding:15px 28px; font-family:'Hanken Grotesk',sans-serif; font-size:18px; font-weight:500; cursor:pointer;" style-hover="background:#A82F43;">
+      <span>Menu</span>
+      <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+        <span style="font-size:22px; line-height:1;">&times;</span>
+      </sc-if>
+      <sc-if value="{{ menuClosed }}" hint-placeholder-val="{{ true }}">
+        <span style="display:inline-flex; flex-direction:column; gap:4px;">
+          <span style="display:block; width:20px; height:2px; background:#fff; border-radius:2px;"></span>
+          <span style="display:block; width:20px; height:2px; background:#fff; border-radius:2px;"></span>
+        </span>
+      </sc-if>
+    </button>
+    <div style="{{ menuPanelStyle }}">
+      <a href="index.html" style="display:flex; align-items:center; justify-content:center; width:155px; background:#E8C7CD; color:#A82F43; border-radius:999px; padding:14px 0; font-family:'Hanken Grotesk',sans-serif; font-size:17px; font-weight:600; text-decoration:none;" style-hover="background:#DDB1B9;">Home</a>
+      <a href="About.dc.html" style="display:flex; align-items:center; justify-content:center; width:155px; background:#E8C7CD; color:#A82F43; border-radius:999px; padding:14px 0; font-family:'Hanken Grotesk',sans-serif; font-size:17px; font-weight:600; text-decoration:none;" style-hover="background:#DDB1B9;">About</a>
+      <a href="Cases.dc.html" style="display:flex; align-items:center; justify-content:center; width:155px; background:#E8C7CD; color:#A82F43; border-radius:999px; padding:14px 0; font-family:'Hanken Grotesk',sans-serif; font-size:17px; font-weight:600; text-decoration:none;" style-hover="background:#DDB1B9;">Cases</a>
+      <a href="mailto:albacperote@gmail.com" style="display:flex; align-items:center; justify-content:center; width:155px; background:#E8C7CD; color:#A82F43; border-radius:999px; padding:14px 0; font-family:'Hanken Grotesk',sans-serif; font-size:17px; font-weight:600; text-decoration:none;" style-hover="background:#DDB1B9;">Contact</a>
+    </div>
+  </div>
+
+  <div style="max-width:1080px; margin:0 auto; padding:0 32px;">
+
+    <!-- author -->
+    <a class="wordmark" href="index.html" style="display:inline-block; margin-top:52px; font-family:'Bricolage Grotesque',sans-serif; font-size:23px; font-weight:700; letter-spacing:-0.02em; color:#1C1B1A; text-decoration:none; padding-bottom:3px; background-image:linear-gradient(#BE3A4F,#BE3A4F); background-repeat:no-repeat; background-position:left bottom; background-size:0% 2px; transition:background-size .32s cubic-bezier(.22,1,.36,1), color .25s ease;">Alba Castrillo<span style="color:#BE3A4F;">.</span></a>
+
+    <!-- HERO -->
+    <div style="margin-top:120px; text-align:center;">
+      <h1 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:72px; line-height:1.1; letter-spacing:-0.025em; margin:0; color:#BE3A4F;">UX Designer<br>Crafting Digital Experiences.</h1>
+      <p style="font-size:21px; font-weight:600; color:#9C988E; margin:30px 0 0;">[Hi! I am Alba! Currently working at @TracInnovations]</p>
+    </div>
+
+    <!-- CASES -->
+    <div style="margin-top:130px;">
+      <div style="font-size:20px; font-weight:600; margin-bottom:30px;">[Cases]</div>
+
+      <!-- featured horizontal card -->
+      <a href="Case Study.dc.html" style="display:block; text-decoration:none; color:inherit;">
+        <div style="display:grid; grid-template-columns:1.05fr 1fr; gap:0; background:#fff; border:1px solid #E7E1D6; border-radius:24px; overflow:hidden;" style-hover="border-color:#D8CFC0;">
+          <div style="background:#EDE8DF; padding:34px;">
+            <img src="images/case-01-cover.jpg" alt="Bloat Tracker cover" style="display:block; width:100%; height:340px; object-fit:cover; border-radius:14px; background:#EDE8DF;" />
+          </div>
+          <div style="padding:48px 44px; display:flex; flex-direction:column; justify-content:center;">
+            <div style="font-size:16px; color:#7A776F; margin-bottom:12px;">Healthcare</div>
+            <h3 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:30px; line-height:1.2; letter-spacing:-0.02em; margin:0;">Bloat Tracker: Understanding Digestive Triggers Through Data</h3>
+            <p style="font-size:17px; line-height:1.6; color:#4A4843; margin:18px 0 0;">Tracking the causes of bloating is often inconsistent and mentally demanding. This project focused on designing an intuitive mobile app to log meals, activities and symptoms.</p>
+            <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:24px;">
+              <span style="border:1px solid #D9D3C8; border-radius:999px; padding:8px 16px; font-size:14px; color:#5A5750;">UX Design</span>
+              <span style="border:1px solid #D9D3C8; border-radius:999px; padding:8px 16px; font-size:14px; color:#5A5750;">Mobile App</span>
+              <span style="border:1px solid #D9D3C8; border-radius:999px; padding:8px 16px; font-size:14px; color:#5A5750;">Healthcare</span>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- two-up grid -->
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:28px; margin-top:28px;">
+
+        <a href="Case Study 02.dc.html" style="display:block; text-decoration:none; color:inherit;">
+          <div style="background:#fff; border:1px solid #E7E1D6; border-radius:24px; overflow:hidden; height:100%;" style-hover="border-color:#D8CFC0;">
+            <div style="background:#EDE8DF; padding:24px;">
+              <img src="images/case-02-cover.jpg" alt="Project 02 cover" style="display:block; width:100%; height:300px; object-fit:cover; border-radius:12px; background:#EDE8DF;" />
+            </div>
+            <div style="padding:30px 30px 34px;">
+              <div style="font-size:16px; color:#7A776F; margin-bottom:10px;">Data Visualization</div>
+              <h3 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:24px; line-height:1.25; letter-spacing:-0.02em; margin:0;">Understanding Traffic Accidents Through Data Visualization</h3>
+              <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:20px;">
+                <span style="border:1px solid #D9D3C8; border-radius:999px; padding:8px 16px; font-size:14px; color:#5A5750;">Data Visualization</span>
+                <span style="border:1px solid #D9D3C8; border-radius:999px; padding:8px 16px; font-size:14px; color:#5A5750;">Data Analysis</span>
+                <span style="border:1px solid #D9D3C8; border-radius:999px; padding:8px 16px; font-size:14px; color:#5A5750;">Information Design</span>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a href="Case Study 03.dc.html" style="display:block; text-decoration:none; color:inherit;">
+          <div style="background:#fff; border:1px solid #E7E1D6; border-radius:24px; overflow:hidden; height:100%;" style-hover="border-color:#D8CFC0;">
+            <div style="background:#EDE8DF; padding:24px;">
+              <img src="images/case-03-cover.jpg" alt="Project 03 cover" style="display:block; width:100%; height:300px; object-fit:cover; border-radius:12px; background:#EDE8DF;" />
+            </div>
+            <div style="padding:30px 30px 34px;">
+              <div style="font-size:16px; color:#7A776F; margin-bottom:10px;">Healthcare</div>
+              <h3 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:24px; line-height:1.25; letter-spacing:-0.02em; margin:0;">Arrhythmia Tracker: Monitoring Heart Rhythm Through Accessible Mobile Tracking</h3>
+              <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:20px;">
+                <span style="border:1px solid #D9D3C8; border-radius:999px; padding:8px 16px; font-size:14px; color:#5A5750;">Health Tech</span>
+                <span style="border:1px solid #D9D3C8; border-radius:999px; padding:8px 16px; font-size:14px; color:#5A5750;">UX Design</span>
+                <span style="border:1px solid #D9D3C8; border-radius:999px; padding:8px 16px; font-size:14px; color:#5A5750;">Mobile App Design</span>
+              </div>
+            </div>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- view all cases bar -->
+      <a class="cta-pill" href="Cases.dc.html" style="width:100%; display:flex; align-items:center; justify-content:space-between; background:#EBC8CE; border-radius:999px; padding:18px 18px 18px 30px; margin-top:28px; font-family:'Hanken Grotesk',sans-serif; font-size:19px; font-weight:600; color:#A82F43; text-decoration:none;" style-hover="background:#E3B6BE;">
+        View All Cases
+        <span style="display:inline-flex; width:42px; height:42px; align-items:center; justify-content:center; background:#DDA9B1; color:#A82F43; border-radius:50%; font-size:18px;">&#8599;</span>
+      </a>
+    </div>
+
+    <!-- ABOUT ME -->
+    <div style="margin-top:130px;">
+      <div style="font-size:20px; font-weight:600; margin-bottom:30px;">[About Me]</div>
+
+      <div style="background:#F4EFE7; border:1px solid #E7E1D6; border-radius:28px; padding:18px; display:grid; grid-template-columns:1fr 1fr; gap:18px;">
+        <img src="images/about-photo.jpg" alt="Drop your photo" style="display:block; width:100%; height:480px; object-fit:cover; border-radius:18px; background:#EDE8DF;" />
+        <div style="display:flex; flex-direction:column; gap:18px;">
+          <div style="background:#fff; border:1px solid #ECE6DB; border-radius:20px; padding:30px 32px;">
+            <h3 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:28px; letter-spacing:-0.02em; margin:0;">Alba Castrillo Perote</h3>
+            <div style="font-size:18px; color:#5A5750; font-weight:500; margin-top:6px;">Clinical Scientist @TracInnovations</div>
+          </div>
+          <div style="background:#fff; border:1px solid #ECE6DB; border-radius:20px; padding:30px 32px; flex:1; display:flex; flex-direction:column; justify-content:center;">
+            <p style="font-size:18px; line-height:1.6; color:#4A4843; margin:0;">Hi, I'm <strong style="color:#1C1B1A;">Alba</strong>, a UX designer working at the intersection of AI, data, and healthcare.</p>
+            <p style="font-size:18px; line-height:1.6; color:#4A4843; margin:18px 0 0;">I focus on creating intuitive, user-centered experiences that make complex systems easier to understand and use.</p>
+            <div style="font-family:'Bricolage Grotesque',sans-serif; font-style:italic; font-size:22px; color:#7A776F; margin-top:22px;">Alba</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- more about me bar -->
+      <a class="cta-pill" href="About.dc.html" style="display:flex; align-items:center; justify-content:space-between; background:#EBC8CE; border-radius:999px; padding:18px 18px 18px 30px; margin-top:28px; font-size:19px; font-weight:600; color:#A82F43; text-decoration:none;" style-hover="background:#E3B6BE;">
+        More About Me
+        <span style="display:inline-flex; width:42px; height:42px; align-items:center; justify-content:center; background:#DDA9B1; color:#A82F43; border-radius:50%; font-size:18px;">&#8599;</span>
+      </a>
+    </div>
+
+    <!-- CONTACT -->
+    <div style="margin-top:130px;">
+      <p style="font-size:20px; font-weight:500; margin:0;">Made it this far? <span style="color:#BE3A4F;">I'd love to hear from you.</span></p>
+      <a class="email-cta" href="mailto:albacperote@gmail.com" style="display:inline-flex; align-items:center; gap:14px; margin-top:26px; padding-bottom:14px; border-bottom:2px solid #1C1B1A; font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:40px; letter-spacing:-0.02em; color:#1C1B1A; text-decoration:none;">
+        <span style="color:#BE3A4F; font-size:34px;">&#8599;</span>
+        <span class="email-default">albacperote@gmail.com</span><span class="email-hover">Let's talk!</span>
+      </a>
+      <p style="font-size:18px; margin:26px 0 0; font-style:italic; color:#4A4843;">or find me on <a href="#" style="color:#1C1B1A; font-style:normal; font-weight:500; text-decoration:none;">[LinkedIn]</a></p>
+    </div>
+
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { menuOpen: false };
+  renderVals() {
+    const open = this.state.menuOpen;
+    return {
+      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
+      menuOpen: open,
+      menuClosed: !open,
+      menuPanelStyle: {
+        display: "flex", flexDirection: "column", gap: "12px", alignItems: "flex-end",
+        transition: "opacity 0.28s ease, transform 0.32s cubic-bezier(0.22,1,0.36,1)",
+        opacity: open ? 1 : 0,
+        transform: open ? "translateY(0)" : "translateY(-8px)",
+        pointerEvents: open ? "auto" : "none",
+      },
+    };
+  }
+}
+</script>
+</body>
+</html>
