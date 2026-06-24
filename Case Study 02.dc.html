@@ -9,13 +9,15 @@
 <x-dc>
 <helmet>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&amp;family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&amp;display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; }
     html, body { margin: 0; padding: 0; }
     body { background: #FAF7F1; }
     ::selection { background: #BE3A4F; color: #fff; }
+    .cta-pill span:last-child { transition: transform .28s cubic-bezier(.22,1,.36,1); }
+    .cta-pill:hover span:last-child { transform: translate(3px,-3px); }
     @media (max-width: 768px) {
       [style*="max-width: 1080px"] { padding-left: 20px !important; padding-right: 20px !important; }
       [style*="grid-template-columns"] { grid-template-columns: 1fr !important; gap: 20px !important; }
@@ -41,8 +43,11 @@
     .email-cta .email-hover { display: none; }
     .email-cta:hover .email-default { display: none; }
     .email-cta:hover .email-hover { display: inline; }
-    .cta-pill span:last-child { transition: transform .28s cubic-bezier(.22,1,.36,1); }
-    .cta-pill:hover span:last-child { transform: translate(3px,-3px); }
+    .case-nav { transition: border-color .25s ease; }
+    .case-nav:hover { border-color: #D8CFC0 !important; }
+    .case-nav .nav-arrow { transition: transform .28s cubic-bezier(.22,1,.36,1); }
+    .case-nav.next:hover .nav-arrow { transform: translateX(4px); }
+    .case-nav.prev:hover .nav-arrow { transform: translateX(-4px); }
   </style>
 </helmet>
 
@@ -75,116 +80,196 @@
     <!-- author -->
     <a class="wordmark" href="index.html" style="display:inline-block; margin-top:52px; font-family:'Bricolage Grotesque',sans-serif; font-size:23px; font-weight:700; letter-spacing:-0.02em; color:#1C1B1A; text-decoration:none; padding-bottom:3px; background-image:linear-gradient(#BE3A4F,#BE3A4F); background-repeat:no-repeat; background-position:left bottom; background-size:0% 2px; transition:background-size .32s cubic-bezier(.22,1,.36,1), color .25s ease;">Alba Castrillo<span style="color:#BE3A4F;">.</span></a>
 
-    <!-- ABOUT label -->
-    <div style="text-align:center; margin-top:90px; font-size:20px; font-weight:600; color:#1C1B1A;">[About]</div>
-
-    <!-- ABOUT CARD -->
-    <div style="margin-top:36px; background:#F4EFE7; border:1px solid #E7E1D6; border-radius:28px; padding:18px; display:grid; grid-template-columns:1fr 1fr; gap:24px; align-items:stretch;">
-      <div style="padding:30px 26px 30px 30px; display:flex; flex-direction:column;">
-        <div style="font-size:20px; font-weight:600; color:#1C1B1A; margin-bottom:34px;">[About me]</div>
-        <div style="display:flex; flex-direction:column; gap:22px; max-width:460px;">
-          <p style="font-size:18px; line-height:1.6; color:#6E6A62; margin:0;"><strong style="color:#1C1B1A;">Hey! I'm Alba,</strong> a biomedical engineer with a background in Human-Centered AI, working at the intersection of design, technology, and healthcare.</p>
-          <p style="font-size:18px; line-height:1.6; color:#6E6A62; margin:0;">I design user-centered digital experiences, combining research, data, and prototyping to create solutions that are both intuitive and technically grounded.</p>
-          <p style="font-size:18px; line-height:1.6; color:#6E6A62; margin:0;">With experience in clinical environments, I bring a real understanding of how health systems work and how thoughtful design can improve everyday experiences for both patients and professionals.</p>
-        </div>
-        <a class="cta-pill" href="CV.pdf" download style="display:inline-flex; align-items:center; gap:14px; align-self:flex-start; margin-top:36px; background:#BE3A4F; color:#fff; border-radius:999px; padding:13px 14px 13px 24px; font-size:17px; font-weight:600; text-decoration:none;" style-hover="background:#A82F43;">
-          Download CV
-          <span style="display:inline-flex; width:34px; height:34px; align-items:center; justify-content:center; background:#fff; color:#BE3A4F; border-radius:50%; font-size:16px;">&#8595;</span>
-        </a>
-      </div>
-      <img src="images/about-photo.jpg" alt="Drop your photo" style="display:block; width:100%; height:100%; min-height:380px; object-fit:cover; border-radius:18px; background:#EDE8DF;" />
+    <!-- HERO -->
+    <div style="position:relative; margin-top:70px; text-align:center;">
+      <a class="case-back" href="Cases.dc.html" style="display:flex; width:fit-content; margin:0 0 24px 0; align-items:center; gap:9px; background:#fff; border:1px solid #E7E1D6; border-radius:12px; padding:11px 18px; font-size:16px; font-weight:500; color:#1C1B1A; text-decoration:none; box-shadow:0 2px 8px rgba(0,0,0,0.04);" style-hover="background:#F4EFE7;">
+        <span style="display:inline-flex; width:22px; height:22px; align-items:center; justify-content:center; background:#BE3A4F; color:#fff; border-radius:50%; font-size:13px;">←</span>
+        Back
+      </a>
+      <div style="font-size:19px; font-weight:500; margin-bottom:22px;">[Case 01]</div>
+      <h1 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:54px; line-height:1.15; letter-spacing:-0.02em; margin:0 auto; max-width:720px;">Bloat Tracker: Understanding Digestive Triggers Through Data</h1>
+      <div style="margin-top:24px; font-size:20px; font-weight:500; color:#5A5750;">Healthcare</div>
     </div>
 
-    <!-- WHAT CAN I DO -->
-    <div style="margin-top:110px;">
-      <div style="font-size:20px; font-weight:600; color:#1C1B1A; margin-bottom:30px;">[What Can I Do]</div>
-      <div style="display:flex; flex-direction:column; gap:18px;">
+    <!-- cover image -->
+    <img src="images/case-01-cover.jpg" alt="Drop project cover — phone mockups" style="display:block; width:100%; height:480px; margin-top:56px; object-fit:cover; border-radius:20px; background:#EDE8DF;" />
 
-        <div style="background:#E7CFD1; border-radius:20px; padding:30px 36px;">
-          <h3 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:26px; color:#BE3A4F; margin:0 0 8px;">Human-Centered Approach</h3>
-          <p style="font-size:18px; line-height:1.5; color:#8A7F7C; margin:0;">Understanding user needs through research, observation, and real-world context.</p>
-        </div>
+    <!-- INTRO + SIDEBAR -->
+    <div style="display:grid; grid-template-columns:1fr 360px; gap:64px; margin-top:90px; align-items:start;">
 
-        <div style="background:#BE3A4F; border-radius:20px; padding:30px 36px;">
-          <h3 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:26px; color:#fff; margin:0 0 8px;">Data-Driven Design</h3>
-          <p style="font-size:18px; line-height:1.5; color:#FBE7EB; margin:0;">Translating data and insights into clear, intuitive user experiences.</p>
-        </div>
+      <div>
+        <h2 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:36px; line-height:1.18; letter-spacing:-0.02em; margin:0;">Bloat Tracker: Understanding Digestive Triggers Through Data</h2>
+        <p style="font-size:19px; line-height:1.6; color:#4A4843; margin:22px 0 0; max-width:560px;">Helping users track daily habits and identify patterns behind bloating through a simple, intuitive mobile experience.</p>
 
-        <div style="background:#E3A9B0; border-radius:20px; padding:30px 36px;">
-          <h3 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:26px; color:#A82F43; margin:0 0 8px;">Prototyping &amp; Development</h3>
-          <p style="font-size:18px; line-height:1.5; color:#8A4853; margin:0;">Designing and building interactive solutions, from concept to implementation.</p>
-        </div>
+        <div style="margin-top:54px; font-size:19px; font-weight:600;">[Project Overview]</div>
+        <p style="font-size:18px; line-height:1.65; color:#4A4843; margin:18px 0 0; max-width:580px;">Tracking the causes of bloating is often inconsistent and mentally demanding. This project focused on designing an intuitive mobile app that enables users to quickly log meals, activities and symptoms to identify patterns, using iterative prototyping and user testing to refine the solution.</p>
 
+        <div style="margin-top:48px; font-size:19px; font-weight:600;">[Problem Statement]</div>
+        <p style="font-size:18px; line-height:1.65; color:#4A4843; margin:18px 0 0; max-width:580px;">Bloating is a common digestive issue, with research indicating that nearly 18% of the population experiences it at least once per week. However, identifying its causes remains challenging, as users often rely on memory or inconsistent tracking methods. This lack of structured tracking makes it difficult to uncover patterns between daily habits and symptoms.</p>
       </div>
-    </div>
 
-    <!-- EXPERIENCE -->
-    <div style="margin-top:110px;">
-      <div style="font-size:20px; font-weight:600; color:#1C1B1A; margin-bottom:30px;">[Experience]</div>
-      <div style="display:flex; flex-direction:column; gap:18px;">
+      <!-- sidebar card -->
+      <aside style="background:#FCFAF5; border:1px solid #E7E1D6; border-radius:24px; padding:30px 28px;">
+        <div style="display:flex; flex-direction:column; gap:24px;">
 
-        <!-- highlighted current role -->
-        <div style="background:#E5AAB1; border-radius:22px; padding:34px 36px; display:grid; grid-template-columns:1fr 1fr; gap:40px;">
           <div>
-            <h3 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:26px; color:#1C1B1A; margin:0;">TracInnovations</h3>
-            <div style="font-size:18px; color:#5A2A33; margin-top:4px; margin-bottom:20px;">Clinical Scientist</div>
-            <div style="display:flex; flex-direction:column; gap:12px; align-items:flex-start;">
-              <span style="background:#fff; border-radius:999px; padding:10px 20px; font-size:15px; font-weight:500; color:#A82F43;">Sep 2025 &ndash; Current</span>
-              <span style="background:#fff; border-radius:999px; padding:10px 20px; font-size:15px; font-weight:500; color:#A82F43;">Copenhagen, Denmark</span>
+            <div style="font-size:16px; font-weight:600; margin-bottom:12px;">[Industry]</div>
+            <span style="display:inline-block; background:#fff; border:1px solid #D9D3C8; border-radius:999px; padding:9px 18px; font-size:15px; font-weight:500; color:#5A5750;">Healthcare</span>
+          </div>
+
+          <div>
+            <div style="font-size:16px; font-weight:600; margin-bottom:12px;">[My Role]</div>
+            <span style="display:inline-block; background:#fff; border:1px solid #D9D3C8; border-radius:999px; padding:9px 18px; font-size:15px; font-weight:500; color:#5A5750;">UX Designer &amp; Developer</span>
+          </div>
+
+          <div>
+            <div style="font-size:16px; font-weight:600; margin-bottom:12px;">[Platforms]</div>
+            <span style="display:inline-block; background:#fff; border:1px solid #D9D3C8; border-radius:999px; padding:9px 18px; font-size:15px; font-weight:500; color:#5A5750;">Mobile (iOS/Android prototype)</span>
+          </div>
+
+          <div>
+            <div style="font-size:16px; font-weight:600; margin-bottom:12px;">[Tools]</div>
+            <span style="display:inline-block; background:#fff; border:1px solid #D9D3C8; border-radius:999px; padding:9px 18px; font-size:15px; font-weight:500; color:#5A5750;">Figma, React Native</span>
+          </div>
+
+          <div>
+            <div style="font-size:16px; font-weight:600; margin-bottom:12px;">[Timeline]</div>
+            <span style="display:inline-block; background:#fff; border:1px solid #D9D3C8; border-radius:999px; padding:9px 18px; font-size:15px; font-weight:500; color:#5A5750;">March 2024 – May 2024</span>
+          </div>
+
+          <div style="margin-top:6px;">
+            <div style="font-size:16px; font-weight:600; margin-bottom:12px;">[Live Prototypes]</div>
+            <div style="display:flex; flex-direction:column; gap:10px;">
+              <a class="cta-pill" href="#" style="display:flex; align-items:center; justify-content:space-between; background:#BE3A4F; color:#fff; border-radius:999px; padding:13px 14px 13px 22px; font-size:17px; font-weight:500; text-decoration:none;" style-hover="background:#A82F43;">
+                Onboarding Flow
+                <span style="display:inline-flex; width:34px; height:34px; align-items:center; justify-content:center; background:#fff; color:#BE3A4F; border-radius:50%; font-size:15px;">↗</span>
+              </a>
+              <a class="cta-pill" href="#" style="display:flex; align-items:center; justify-content:space-between; background:#BE3A4F; color:#fff; border-radius:999px; padding:13px 14px 13px 22px; font-size:17px; font-weight:500; text-decoration:none;" style-hover="background:#A82F43;">
+                Daily Logging
+                <span style="display:inline-flex; width:34px; height:34px; align-items:center; justify-content:center; background:#fff; color:#BE3A4F; border-radius:50%; font-size:15px;">↗</span>
+              </a>
+              <a class="cta-pill" href="#" style="display:flex; align-items:center; justify-content:space-between; background:#BE3A4F; color:#fff; border-radius:999px; padding:13px 14px 13px 22px; font-size:17px; font-weight:500; text-decoration:none;" style-hover="background:#A82F43;">
+                Insights Dashboard
+                <span style="display:inline-flex; width:34px; height:34px; align-items:center; justify-content:center; background:#fff; color:#BE3A4F; border-radius:50%; font-size:15px;">↗</span>
+              </a>
             </div>
           </div>
+
+        </div>
+      </aside>
+    </div>
+
+    <!-- PROCESS -->
+    <div style="margin-top:110px;">
+      <div style="font-size:20px; font-weight:600; margin-bottom:28px;">[Process]</div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:28px;">
+
+        <div style="background:#F1ECE2; border:1px solid #E4DDD0; border-radius:22px; padding:34px 32px;">
+          <h3 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:25px; margin:0 0 6px;"><span style="color:#1C1B1A;">[01]</span> User Research</h3>
           <div style="display:flex; flex-direction:column;">
-            <div style="display:flex; gap:14px; padding:14px 0; border-bottom:1px solid #D58D96;">
-              <span style="flex:none; width:9px; height:9px; border-radius:50%; background:#A82F43; margin-top:8px;"></span>
-              <p style="font-size:17px; line-height:1.45; color:#5A2A33; margin:0;">Design and build software solutions for motion correction in MRI.</p>
-            </div>
-            <div style="display:flex; gap:14px; padding:14px 0; border-bottom:1px solid #D58D96;">
-              <span style="flex:none; width:9px; height:9px; border-radius:50%; background:#A82F43; margin-top:8px;"></span>
-              <p style="font-size:17px; line-height:1.45; color:#5A2A33; margin:0;">Test and validate new system features at the scanner.</p>
-            </div>
-            <div style="display:flex; gap:14px; padding:14px 0;">
-              <span style="flex:none; width:9px; height:9px; border-radius:50%; background:#A82F43; margin-top:8px;"></span>
-              <p style="font-size:17px; line-height:1.45; color:#5A2A33; margin:0;">Provide MR-related support.</p>
-            </div>
+            <p style="font-size:17px; line-height:1.55; color:#4A4843; margin:18px 0; border-bottom:1px solid #DDD5C7; padding-bottom:18px;">Conducted exploratory research to understand how users track health-related symptoms.</p>
+            <p style="font-size:17px; line-height:1.55; color:#4A4843; margin:0 0 18px; border-bottom:1px solid #DDD5C7; padding-bottom:18px;">Identified common challenges in remembering daily habits and triggers.</p>
+            <p style="font-size:17px; line-height:1.55; color:#4A4843; margin:0;">Reviewed existing solutions to understand gaps in usability and functionality.</p>
           </div>
         </div>
 
-        <!-- regular roles -->
-        <div style="background:#fff; border:1px solid #E7E1D6; border-radius:18px; padding:26px 32px; display:grid; grid-template-columns:1.2fr 1fr auto; gap:24px; align-items:center;">
-          <h3 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:21px; margin:0;">TracInnovations</h3>
-          <div style="font-size:17px; color:#4A4843;">Software Developer</div>
-          <div style="display:flex; gap:10px;">
-            <span style="border:1px solid #D9D3C8; border-radius:999px; padding:8px 16px; font-size:14px; font-weight:500; color:#5A5750;">Feb 2024 &ndash; Aug 2025</span>
-            <span style="border:1px solid #D9D3C8; border-radius:999px; padding:8px 16px; font-size:14px; font-weight:500; color:#5A5750;">Copenhagen, Denmark</span>
+        <div style="background:#F1ECE2; border:1px solid #E4DDD0; border-radius:22px; padding:34px 32px;">
+          <h3 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:25px; margin:0 0 6px;"><span style="color:#1C1B1A;">[02]</span> Insights</h3>
+          <div style="display:flex; flex-direction:column;">
+            <p style="font-size:17px; line-height:1.55; color:#4A4843; margin:18px 0; border-bottom:1px solid #DDD5C7; padding-bottom:18px;">Tracking is often inconsistent and mentally demanding.</p>
+            <p style="font-size:17px; line-height:1.55; color:#4A4843; margin:0 0 18px; border-bottom:1px solid #DDD5C7; padding-bottom:18px;">Users need a low-effort logging experience.</p>
+            <p style="font-size:17px; line-height:1.55; color:#4A4843; margin:0;">Clear visualization is key to identifying patterns.</p>
           </div>
         </div>
 
-        <div style="background:#fff; border:1px solid #E7E1D6; border-radius:18px; padding:26px 32px; display:grid; grid-template-columns:1.2fr 1fr auto; gap:24px; align-items:center;">
-          <h3 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:21px; margin:0; line-height:1.25;">12 de Octubre University Hospital</h3>
-          <div style="font-size:17px; color:#4A4843;">Health Informatics Intern</div>
-          <div style="display:flex; gap:10px;">
-            <span style="border:1px solid #D9D3C8; border-radius:999px; padding:8px 16px; font-size:14px; font-weight:500; color:#5A5750;">May &ndash; July 2022</span>
-            <span style="border:1px solid #D9D3C8; border-radius:999px; padding:8px 16px; font-size:14px; font-weight:500; color:#5A5750;">Madrid, Spain</span>
+        <div style="background:#F1ECE2; border:1px solid #E4DDD0; border-radius:22px; padding:34px 32px;">
+          <h3 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:25px; margin:0 0 6px;"><span style="color:#1C1B1A;">[03]</span> Design Solution</h3>
+          <div style="display:flex; flex-direction:column;">
+            <p style="font-size:17px; line-height:1.55; color:#4A4843; margin:18px 0; border-bottom:1px solid #DDD5C7; padding-bottom:18px;">Developed initial wireframes focusing on simplicity and quick input.</p>
+            <p style="font-size:17px; line-height:1.55; color:#4A4843; margin:0 0 18px; border-bottom:1px solid #DDD5C7; padding-bottom:18px;">Designed key features: meal logging, activity tracking and symptom recording.</p>
+            <p style="font-size:17px; line-height:1.55; color:#4A4843; margin:0;">Created interactive prototypes in Figma.</p>
           </div>
         </div>
 
-        <div style="background:#fff; border:1px solid #E7E1D6; border-radius:18px; padding:26px 32px; display:grid; grid-template-columns:1.2fr 1fr auto; gap:24px; align-items:center;">
-          <h3 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:21px; margin:0; line-height:1.25;">Fundación Alcorcón University Hospital</h3>
-          <div style="font-size:17px; color:#4A4843;">Clinical Technology Intern</div>
-          <div style="display:flex; gap:10px;">
-            <span style="border:1px solid #D9D3C8; border-radius:999px; padding:8px 16px; font-size:14px; font-weight:500; color:#5A5750;">Sep 2021 &ndash; April 2022</span>
-            <span style="border:1px solid #D9D3C8; border-radius:999px; padding:8px 16px; font-size:14px; font-weight:500; color:#5A5750;">Madrid, Spain</span>
+        <div style="background:#F1ECE2; border:1px solid #E4DDD0; border-radius:22px; padding:34px 32px;">
+          <h3 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:25px; margin:0 0 6px;"><span style="color:#1C1B1A;">[04]</span> Testing &amp; Iteration</h3>
+          <div style="display:flex; flex-direction:column;">
+            <p style="font-size:17px; line-height:1.55; color:#4A4843; margin:18px 0; border-bottom:1px solid #DDD5C7; padding-bottom:18px;">Conducted usability testing with 8 participants performing key tasks independently.</p>
+            <p style="font-size:17px; line-height:1.55; color:#4A4843; margin:0 0 18px; border-bottom:1px solid #DDD5C7; padding-bottom:18px;">Identified friction points through task completion time, errors, and user feedback.</p>
+            <p style="font-size:17px; line-height:1.55; color:#4A4843; margin:0;">Iterated on the design by simplifying flows, improving labels, and reducing steps.</p>
           </div>
         </div>
 
       </div>
+    </div>
+
+    <!-- PROCESS IMAGE -->
+    <div style="margin-top:48px;">
+      <button onClick="{{ openZoom }}" style="display:block; width:100%; padding:0; border:1px solid #E7E1D6; border-radius:20px; overflow:hidden; cursor:zoom-in; background:#EDE8DF; position:relative; font-family:inherit;">
+        <img src="images/case-01-process.jpg" alt="User flow map" draggable="false" style="display:block; width:100%; height:auto;" />
+        <span style="position:absolute; bottom:16px; right:16px; display:inline-flex; align-items:center; gap:8px; background:rgba(28,27,26,0.85); color:#fff; border-radius:999px; padding:10px 18px; font-size:14px; font-weight:600; pointer-events:none;">&#10530; Click to zoom</span>
+      </button>
+      <p style="font-size:15px; color:#7A776F; margin:14px 0 0;">Full user-flow map — click to explore in detail.</p>
+    </div>
+
+    <!-- ZOOM LIGHTBOX -->
+    <sc-if value="{{ zoomOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="{{ zoomOverlayStyle }}" onClick="{{ closeZoomBackdrop }}" onWheel="{{ onWheel }}">
+      <div style="position:fixed; top:24px; right:24px; display:flex; gap:10px; z-index:2;">
+        <button onClick="{{ zoomOut }}" style="width:46px; height:46px; border:none; border-radius:50%; background:#fff; color:#1C1B1A; font-size:26px; cursor:pointer; display:flex; align-items:center; justify-content:center;">&minus;</button>
+        <button onClick="{{ zoomIn }}" style="width:46px; height:46px; border:none; border-radius:50%; background:#fff; color:#1C1B1A; font-size:22px; cursor:pointer; display:flex; align-items:center; justify-content:center;">+</button>
+        <button onClick="{{ closeZoom }}" style="width:46px; height:46px; border:none; border-radius:50%; background:#BE3A4F; color:#fff; font-size:20px; cursor:pointer; display:flex; align-items:center; justify-content:center;">&times;</button>
+      </div>
+      <img src="images/case-01-process.jpg" alt="User flow map" draggable="false" onPointerDown="{{ onPanStart }}" onPointerMove="{{ onPanMove }}" onPointerUp="{{ onPanEnd }}" style="{{ zoomImgStyle }}" />
+    </div>
+    </sc-if>
+
+    <!-- KEY LEARNINGS -->
+    <div style="margin-top:110px;">
+      <div style="font-size:20px; font-weight:600; margin-bottom:28px;">[Key Learnings]</div>
+      <div style="display:flex; flex-direction:column; gap:18px;">
+
+        <div style="background:#E9E1DE; border-radius:18px; padding:26px 32px;">
+          <h3 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:24px; color:#BE3A4F; margin:0 0 8px;">Simplicity is essential</h3>
+          <p style="font-size:17px; line-height:1.55; color:#4A4843; margin:0;">Reducing complexity significantly improves usability in habit-tracking apps.</p>
+        </div>
+
+        <div style="background:#BE3A4F; border-radius:18px; padding:26px 32px;">
+          <h3 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:24px; color:#fff; margin:0 0 8px;">User testing reveals real issues</h3>
+          <p style="font-size:17px; line-height:1.55; color:#FBE7EB; margin:0;">Observing users uncovered friction points not identified during design.</p>
+        </div>
+
+        <div style="background:#EFC9CE; border-radius:18px; padding:26px 32px;">
+          <h3 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:24px; color:#BE3A4F; margin:0 0 8px;">Iteration improves outcomes</h3>
+          <p style="font-size:17px; line-height:1.55; color:#8A4853; margin:0;">Continuous refinement led to a more intuitive and efficient experience.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- PREV / NEXT -->
+    <div style="margin-top:120px; display:grid; grid-template-columns:1fr 1fr; gap:18px;">
+      <a class="case-nav prev" href="Case Study 04.dc.html" style="display:flex; align-items:center; gap:18px; background:#fff; border:1px solid #E7E1D6; border-radius:20px; padding:24px 28px; text-decoration:none; color:inherit;">
+        <span class="nav-arrow" style="flex:none; display:inline-flex; width:42px; height:42px; align-items:center; justify-content:center; background:#BE3A4F; color:#fff; border-radius:50%; font-size:18px;">&larr;</span>
+        <span>
+          <span style="display:block; font-size:14px; color:#7A776F; margin-bottom:4px;">Previous</span>
+          <span style="display:block; font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:20px; letter-spacing:-0.01em;">Case 04</span>
+        </span>
+      </a>
+      <a class="case-nav next" href="Case Study 02.dc.html" style="display:flex; align-items:center; justify-content:flex-end; gap:18px; background:#fff; border:1px solid #E7E1D6; border-radius:20px; padding:24px 28px; text-decoration:none; color:inherit; text-align:right;">
+        <span>
+          <span style="display:block; font-size:14px; color:#7A776F; margin-bottom:4px;">Next</span>
+          <span style="display:block; font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:20px; letter-spacing:-0.01em;">Case 02</span>
+        </span>
+        <span class="nav-arrow" style="flex:none; display:inline-flex; width:42px; height:42px; align-items:center; justify-content:center; background:#BE3A4F; color:#fff; border-radius:50%; font-size:18px;">&rarr;</span>
+      </a>
     </div>
 
     <!-- CONTACT -->
     <div style="margin-top:120px;">
       <p style="font-size:20px; font-weight:500; margin:0;">Made it this far? <span style="color:#BE3A4F;">I'd love to hear from you.</span></p>
       <a class="email-cta" href="mailto:albacperote@gmail.com" style="display:inline-flex; align-items:center; gap:14px; margin-top:26px; padding-bottom:14px; border-bottom:2px solid #1C1B1A; font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:40px; letter-spacing:-0.02em; color:#1C1B1A; text-decoration:none;">
-        <span style="color:#BE3A4F; font-size:34px;">&#8599;</span>
+        <span style="color:#BE3A4F; font-size:34px;">↗</span>
         <span class="email-default">albacperote@gmail.com</span><span class="email-hover">Let's talk!</span>
       </a>
       <p style="font-size:18px; margin:26px 0 0; font-style:italic; color:#4A4843;">or find me on <a href="#" style="color:#1C1B1A; font-style:normal; font-weight:500; text-decoration:none;">[LinkedIn]</a></p>
@@ -195,9 +280,12 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  state = { menuOpen: false };
+  state = { menuOpen: false, zoom: { open: false, scale: 1, tx: 0, ty: 0, dragging: false } };
+  setZoom(patch) { this.setState(s => ({ zoom: { ...s.zoom, ...patch } })); }
+  lockScroll(on) { document.body.style.overflow = on ? "hidden" : ""; }
   renderVals() {
     const open = this.state.menuOpen;
+    const z = this.state.zoom;
     return {
       toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
       menuOpen: open,
@@ -208,6 +296,29 @@ class Component extends DCLogic {
         opacity: open ? 1 : 0,
         transform: open ? "translateY(0)" : "translateY(-8px)",
         pointerEvents: open ? "auto" : "none",
+      },
+      zoomOpen: z.open,
+      openZoom: () => { this.lockScroll(true); this.setZoom({ open: true, scale: 1, tx: 0, ty: 0 }); },
+      closeZoom: () => { this.lockScroll(false); this.setZoom({ open: false }); },
+      closeZoomBackdrop: (e) => { if (e.target === e.currentTarget) { this.lockScroll(false); this.setZoom({ open: false }); } },
+      zoomIn: () => this.setZoom({ scale: Math.min(z.scale * 1.35, 6) }),
+      zoomOut: () => { const ns = Math.max(z.scale / 1.35, 1); this.setZoom(ns === 1 ? { scale: 1, tx: 0, ty: 0 } : { scale: ns }); },
+      onWheel: (e) => { try { e.preventDefault(); } catch (_) {} const f = e.deltaY < 0 ? 1.12 : 1 / 1.12; const ns = Math.min(Math.max(z.scale * f, 1), 6); this.setZoom(ns === 1 ? { scale: 1, tx: 0, ty: 0 } : { scale: ns }); },
+      onPanStart: (e) => { if (z.scale <= 1) return; try { e.target.setPointerCapture(e.pointerId); } catch (_) {} this._drag = { x: e.clientX, y: e.clientY, tx: z.tx, ty: z.ty }; this.setZoom({ dragging: true }); },
+      onPanMove: (e) => { if (!this._drag) return; this.setZoom({ tx: this._drag.tx + (e.clientX - this._drag.x), ty: this._drag.ty + (e.clientY - this._drag.y) }); },
+      onPanEnd: () => { if (this._drag) { this._drag = null; this.setZoom({ dragging: false }); } },
+      zoomOverlayStyle: {
+        position: "fixed", inset: 0, zIndex: 200, background: "rgba(20,18,17,0.93)",
+        display: "flex", alignItems: "center", justifyContent: "center",
+        overflow: "hidden", touchAction: "none",
+        cursor: z.scale > 1 ? "grab" : "zoom-out",
+      },
+      zoomImgStyle: {
+        maxWidth: "94vw", maxHeight: "90vh", objectFit: "contain", userSelect: "none",
+        transform: `translate(${z.tx}px, ${z.ty}px) scale(${z.scale})`,
+        transition: z.dragging ? "none" : "transform .18s ease",
+        cursor: z.scale > 1 ? (z.dragging ? "grabbing" : "grab") : "auto",
+        willChange: "transform",
       },
     };
   }
